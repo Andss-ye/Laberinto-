@@ -1,35 +1,43 @@
 @startuml
-left to right direction
+class Global_Var {
+  - WHITE: tuple
+  - BLACK: tuple
+  - WIDTH: int
+  - HEIGHT: int
+  - CELL_SIZE: int
+}
 
 class Laberinto {
-  +matriz: ElementoLaberinto[][]
-  +MostrarLaberinto()
+  - maze: list
+  - rows: int
+  - cols: int
+  + load_maze(filename: str)
+  + draw(screen)
 }
 
-class ElementoLaberinto {
-  +valor
-  +obtenervalor()
-  +dibujarelemento()
+class Personaje {
+  - x: int
+  - y: int
+  + draw(screen)
 }
 
-class Pared {
-}
-class Jugador {
-}
-class EspacioLibre {
-}
 class Meta {
+  - x: int
+  - y: int
+  + draw(screen)
 }
 
-class LaberintoManager {
-  +CargarLaberintoDesdeArchivo()
-  +DibujarLaberinto()
+class Juego {
+  - laberinto: Laberinto
+  - personaje: Personaje
+  - meta: Meta
+  + run()
 }
 
-Laberinto  -- ElementoLaberinto 
-ElementoLaberinto <|-- Pared
-ElementoLaberinto <|-- EspacioLibre
-ElementoLaberinto <|-- Jugador
-ElementoLaberinto <|-- Meta
-LaberintoManager -- Laberinto
+Global_Var -- Laberinto
+Global_Var -- Personaje
+Global_Var -- Meta
+Juego o-- Laberinto
+Juego o-- Personaje
+Juego o-- Meta
 @enduml

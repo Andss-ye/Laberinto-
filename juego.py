@@ -18,17 +18,13 @@ class Juego:
 
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT]:
-                # Mueve al personaje hacia la izquierda
-                pass  # Agrega la lógica de movimiento
+                pass 
             elif keys[pygame.K_RIGHT]:
-                # Mueve al personaje hacia la derecha
-                pass  # Agrega la lógica de movimiento
+                pass 
             elif keys[pygame.K_UP]:
-                # Mueve al personaje hacia arriba
-                pass  # Agrega la lógica de movimiento
+                pass  
             elif keys[pygame.K_DOWN]:
-                # Mueve al personaje hacia abajo
-                pass  # Agrega la lógica de movimiento
+                pass 
 
             screen.fill((255, 255, 255))
             self.laberinto.draw(screen)
