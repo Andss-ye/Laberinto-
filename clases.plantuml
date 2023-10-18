@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+class Laberinto {
+  +matriz: ElementoLaberinto[][]
+  +MostrarLaberinto()
+}
+
+class ElementoLaberinto {
+  +valor
+  +obtenervalor()
+  +dibujarelemento()
+}
+
+class Pared {
+}
+class Jugador {
+}
+class EspacioLibre {
+}
+class Meta {
+}
+
+class LaberintoManager {
+  +CargarLaberintoDesdeArchivo()
+  +DibujarLaberinto()
+}
+
+Laberinto  -- ElementoLaberinto 
+ElementoLaberinto <|-- Pared
+ElementoLaberinto <|-- EspacioLibre
+ElementoLaberinto <|-- Jugador
+ElementoLaberinto <|-- Meta
+LaberintoManager -- Laberinto
+@enduml
